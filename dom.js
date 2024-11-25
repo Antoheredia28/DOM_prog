@@ -120,3 +120,47 @@ let text = '
 </p> 
 '
 $explicacionDOM.innerText = text
+$explicacionDOM.textContent = text
+$explicacionDOM.innerHTML = text
+$explicacionDOM.outerHTML = text
+$explicacionDOM.innerHTML = text
+
+const $cards = document.querySelector('.cards')
+console.log($cards)
+console.log($cards.children)
+console.log($cards.children[2])
+console.log($cards.parentElement)
+console.log($cards.parentNode)
+console.log($cards.firstElementChild)
+console.log($cards.lastElementChild)
+console.log($cards.previousElementSibling)
+console.log($cards.nextElementSibling)
+
+//Creamos una nueva imagen (figure)
+
+const $figure = document.createElement('figure'),
+      $img = document.createElement('img'),
+      $figcaption = document.createElement('figcaption'),
+      $figcaptionText = document.createTextNode('Tecnologia 6'),
+      $cardsPadre = document.querySelector('.cards')
+
+// Dinamicamente estan credas las etiquetas pero no estan agragdas al arbol del DOM.
+
+$img.setAttribute('src', 'IMG/imagen7.sve') 
+$img.setAttribute('alt', 'Sexta imagen de Tecnologia') 
+$img.setAttribute('width', '3980px') 
+$figure.classList.add('card') 
+
+$figcaption.appendChild($figcaptionText) 
+$figure.appendChild($img) 
+$figure .appendChild($figcaption) 
+$cardsPadre .appendChild($figure) 
+
+$figure2 = document.createElement('figure') 
+$figure2.innerHTML = ' 
+<img src="IMG/imagen8.jpe" alt="Aqui se debe mostrar una imagen” width="300px"> 
+<figcaption>Tecnologia 7</figcaption> 
+'
+
+$figure2.classList.add('card') 
+$cardsPadre.appendChild($figure2) 
