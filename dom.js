@@ -72,4 +72,51 @@ $enlaceDelDOM.style.marginRight = 'auto'
 $enlaceDelDOM.style.padding = '1rem'
 $enlaceDelDOM.style.borderRadius = '.5rem'
 
+//Modifico el valor de una variable
+$enHtml.style.setProperty('--dark-color', 'purple')
+varDarkColor =getComputedStyle($enHtml).getPropertyValue('--dark-color')
+$enBody.style.setProperty('background-color', varDarkColor)
 
+//Vuelvo acambiar el valor de la variable "dark-color".
+$enHtml.style.setProperty('--dark-color', 'grey')
+
+//Accedemos a las clases.
+const $card = document.querySelector('.card')
+console.log($card)
+console.log($card.className)
+console.log($card.classList)
+console.log($card.classList.contains('rotate-45'))
+$card.classList.add('rotate-45')
+console.log($card.classList.contains('rotate-45'))
+console.log($card.className)
+console.log($card.classList)
+
+$card.classList.remove('rotate-45')
+console.log($card.classList.contains('rotate-45'))
+$card.classList.toggle('rotate-45')
+console.log($card.classList.contains('rotate-45'))
+$card.classList.toggle('rotate-45')
+console.log($card.classList.contains('rotate-45'))
+$card.classList.toggle('rotate-45')
+$card.classList.replace('rotate-45', 'rotate-135')
+$card.classList.add('opacity-80' ,'sepia')
+$card.classList.remove('opacity-80','sepia')
+$card.classList.add('opacity-80','sepia')
+$card.classList.remove('rotate-135','opacity-80')
+$card.classList.toggle('opacity-80','sepia')
+
+//Texto y HTML
+
+const $explicacionDOM = document.getElementById('que-es')
+let text = '
+<p> 
+    El modelo de objetos de documento (<b><i>DOM - Document Object Model</i></b>) es una API para documentos HTML y XML. 
+</p> 
+<p> 
+    Este provee una representación estructural del documento,permitiendo modificar su contenido y presentación visual mediante código JS. 
+</p> 
+<p> 
+    <mark>El DOM no es parte de la especificación de JavaScript,es una API para los navegadores.</mark> 
+</p> 
+'
+$explicacionDOM.innerText = text
